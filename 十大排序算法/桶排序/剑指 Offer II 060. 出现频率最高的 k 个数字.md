@@ -30,7 +30,7 @@
 
 题目最终需要返回的是前 k 个频率最大的元素，可以想到借助堆这种数据结构，对于 k 频率之后的元素不用再去处理，进一步优化时间复杂度。
 
-![img](./images/出现频率最高的k个数字/1.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/十大排序算法/桶排序/images/出现频率最高的k个数字/1.jpg)
 
 具体操作为：
 
@@ -44,21 +44,21 @@
 
 - 最终，堆中的 k个元素即为前 k 个高频元素
 
-![堆中的元素就是前 k 个频率最大的元素](./images/出现频率最高的k个数字/2.gif)
+![堆中的元素就是前 k 个频率最大的元素](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/十大排序算法/桶排序/images/出现频率最高的k个数字/2.gif)
 
 #### 复杂度分析
 
-![image-20210808183025616](./images/出现频率最高的k个数字/4.jpg)
+![image-20210808183025616](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/十大排序算法/桶排序/images/出现频率最高的k个数字/4.jpg)
 
 ### 解法二：桶排序法
 
 首先依旧使用哈希表统计频率，统计完成后，创建一个数组，将频率作为数组下标，对于出现频率不同的数字集合，存入对应的数组下标即可。
 
-![img](./images/出现频率最高的k个数字/3.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/十大排序算法/桶排序/images/出现频率最高的k个数字/3.jpg)
 
 #### 复杂度分析
 
-![image-20210808183344894](./images/出现频率最高的k个数字/5.jpg)
+![image-20210808183344894](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/十大排序算法/桶排序/images/出现频率最高的k个数字/5.jpg)
 
 ```java
 class Solution {

@@ -1,104 +1,104 @@
 # BF算法与RK算法
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法3.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法3.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法5.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法5.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法6.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法6.jpg)
 
 什么意思呢？让我们来举一个例子：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法7.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法7.jpg)
 
 在上图中，字符串B是A的子串，B第一次在A中出现的位置下标是2（字符串的首位下标是0），所以返回 **2**。
 
 我们再看另一个例子：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法8.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法8.jpg)
 
 在上图中，字符串B在A中并不存在，所以返回 **-1**。
 
 为了统一概念，在后文中，我们把字符串A称为**主串**，把字符串B称为**模式串**。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法9.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法9.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法10.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法10.jpg)
 
 小灰的想法简单粗暴，让我们用下面的例子来演示一下：
 
 **第一轮**，我们从主串的首位开始，把主串和模式串的字符逐个比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法11.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法11.jpg)
 
 显然，主串的首位字符是a，模式串的首位字符是b，两者并不匹配。
 
 **第二轮**，我们把模式串后移一位，从主串的第二位开始，把主串和模式串的字符逐个比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法12.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法12.jpg)
 
 主串的第二位字符是b，模式串的第二位字符也是b，两者匹配，继续比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法13.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法13.jpg)
 
 主串的第三位字符是b，模式串的第三位字符也是c，两者并不匹配。
 
 **第三轮**，我们把模式串再次后移一位，从主串的第三位开始，把主串和模式串的字符逐个比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法14.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法14.jpg)
 
 主串的第三位字符是b，模式串的第三位字符也是b，两者匹配，继续比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法15.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法15.jpg)
 
 主串的第四位字符是c，模式串的第四位字符也是c，两者匹配，继续比较：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法16.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法16.jpg)
 
 主串的第五位字符是e，模式串的第五位字符也是e，两者匹配，比较完成！
 
 由此得到结果，模式串 bce 是主串 abbcefgh 的子串，在主串第一次出现的位置下标是 2：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法17.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法17.jpg)
 
 以上就是小灰想出的解决方案，这个算法有一个名字，叫做**BF算法**，是Brute Force（暴力算法）的缩写。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法18.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法18.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法19.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法19.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法20.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法20.jpg)
 
 上图的情况，在每一轮进行字符匹配时，模式串的前三个字符a都和主串中的字符相匹配，一直检查到模式串最后一个字符b，才发现不匹配：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法21.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法21.jpg)
 
 这样一来，两个字符串在每一轮都需要白白比较4次，显然非常浪费。
 
 假设主串的长度是m，模式串的长度是n，那么在这种极端情况下，BF算法的最坏时间复杂度是**O（mn）**。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法22.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法22.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法23.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法23.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法24.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法24.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法25.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法25.jpg)
 
 ————————————
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法26.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法26.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法27.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法27.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法28.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法28.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法29.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法29.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法30.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法30.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法31.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法31.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法32.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法32.jpg)
 
 比较哈希值是什么意思呢？
 
@@ -108,13 +108,13 @@ hashcode = hash（string）
 
 显然，相对于逐个字符比较两个字符串，仅比较两个字符串的hashcode要容易得多。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法33.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法33.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法34.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法34.jpg)
 
 给定主串和模式串如下（假定字符串只包含26个小写字母）：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法35.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法35.jpg)
 
 **第一步，我们需要生成模式串的hashcode。**
 
@@ -138,7 +138,7 @@ bce = 2*(26^2) + 3*26 + 5 = 1435
 
 为了方便演示，后续我们采用的是按位相加的hash算法，所以bce的hashcode是10：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法36.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法36.jpg)
 
 **第二步，生成主串当中第一个等长子串的hashcode。**
 
@@ -148,7 +148,7 @@ bce = 2*(26^2) + 3*26 + 5 = 1435
 
 即abb = 1 + 2 + 2 = 5：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法37.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法37.jpg)
 
 **第三步，比较两个hashcode。**
 
@@ -158,7 +158,7 @@ bce = 2*(26^2) + 3*26 + 5 = 1435
 
 bbc = 2 + 2 + 3 = 7：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法38.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法38.jpg)
 
 **第五步，比较两个hashcode。**
 
@@ -168,7 +168,7 @@ bbc = 2 + 2 + 3 = 7：
 
 bce= 2 + 3 + 5 = 10：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法39.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法39.jpg)
 
 **第七步，比较两个hashcode。**
 
@@ -180,21 +180,21 @@ bce= 2 + 3 + 5 = 10：
 
 hashcode的比较只是初步验证，之后我们还需要像BF算法那样，对两个字符串逐个字符比较，最终判断出两个字符串匹配。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法40.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法40.jpg)
 
 最后得出结论，模式串bce是主串abbcefgh的子串，第一次出现的下标是2。
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法41.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法41.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法42.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法42.jpg)
 
 什么意思呢？让我们再来看一个例子：
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法43.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法43.jpg)
 
 上图中，我已知子串abbcefg的hashcode是26，那么如何计算下一个子串，也就是bbcefgd的hashcode呢？
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法44.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法44.jpg)
 
 我们没有必要把子串的字符重新进行累加运算，而是可以采用一个更简单的方法。由于新子串的前面少了一个a，后面多了一个d，所以：
 
@@ -204,9 +204,9 @@ hashcode的比较只是初步验证，之后我们还需要像BF算法那样，�
 
 **新hashcode = 旧hashcode - 2 + 5 = 29-2+5 = 32**
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法45.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法45.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法46.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法46.jpg)
 
 ```java
 public static int rabinKarp(String str, String pattern){
@@ -263,18 +263,18 @@ public static void main(String[] args) {
 
 ```
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法47.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法47.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法48.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法48.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法49.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法49.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法50.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法50.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法51.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法51.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法52.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法52.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法53.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法53.jpg)
 
-![BF算法与RK算法](./images/BF算法与RK算法/BF算法与RK算法54.jpg)
+![BF算法与RK算法](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BF算法与RK算法/BF算法与RK算法54.jpg)

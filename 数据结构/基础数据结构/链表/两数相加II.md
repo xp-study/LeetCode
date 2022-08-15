@@ -22,7 +22,7 @@
 **动画演示**
 
 <video id="video" controls="" preload="none">
-    <source id="mp4" src="./images/两数相加/两数相加1.mp4" type="video/mp4">
+    <source id="mp4" src="http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/两数相加/两数相加1.mp4" type="video/mp4">
 </video>
 
 

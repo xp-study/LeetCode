@@ -56,7 +56,7 @@ class Solution {
 
 **复杂度分析**
 
-![image-20210808121011176](./images/变位词组/1.jpg)
+![image-20210808121011176](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/Hash表/images/变位词组/1.jpg)
 
 #### 方法二：计数
 
@@ -95,4 +95,4 @@ class Solution {
 
 **复杂度分析**
 
-![image-20210808121109301](./images/变位词组/2.jpg)
+![image-20210808121109301](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/Hash表/images/变位词组/2.jpg)

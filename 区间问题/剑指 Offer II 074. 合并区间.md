@@ -30,7 +30,7 @@
 
 2 个区间的关系有以下 6 种，但是其实可以变成上面 3 种情况（只需要假设 第一个区间的起始位置 \leq≤ 第二个区间的起始位置，如果不满足这个假设，交换这两个区间）。这 3 种情况的合并的逻辑都很好写。
 
-![image.png](./images/合并区间/1.jpg)
+![image.png](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/区间问题/images/合并区间/1.jpg)
 
 ### 二、合并 n 个区间
 

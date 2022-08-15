@@ -18,7 +18,7 @@ Bellman-Ford算法寻找单源最短路径的时间复杂度为O(V*E)。（V为�
 
 首先看下代码中所使用的连通图（PS：改图为无向连通图，所以每两个顶点之间均有两条边）：
 
-![img](./images/BellmanFord算法/1.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/图/images/BellmanFord算法/1.jpg)
 
 现在求取顶点A到其它所有顶点之间的最短距离
 

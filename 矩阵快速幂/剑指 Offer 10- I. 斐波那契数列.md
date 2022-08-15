@@ -105,7 +105,7 @@ class Solution {
 
 **对于数列递推问题，可以使用矩阵快速幂进行加速，**
 
-![image-20211117081912371](./images/斐波那契数列/1.jpg)
+![image-20211117081912371](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/矩阵快速幂/images/斐波那契数列/1.jpg)
 
 ```java
 class Solution {

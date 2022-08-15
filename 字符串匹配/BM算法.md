@@ -6,11 +6,11 @@ BM 算法是非常高效的匹配算法，据说他的执行效率比大名鼎�
 
 首先，BM 算法的匹配方式不同以往。之前我们学习的 BF 算法和 RK 算法在使用模式串匹配主串失败以后只会向后滑动一个字符。但是，实际上我们已经获取了模式串的字符信息，我们可以利用这些信息**让模式串滑动多个字符**，从而加速匹配。
 
-![img](./images/BM算法/1.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/1.jpg)
 
 单个字符滑动
 
-![img](./images/BM算法/2.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/2.jpg)
 
 多字符滑动
 
@@ -18,11 +18,11 @@ BM 算法是非常高效的匹配算法，据说他的执行效率比大名鼎�
 
 之前我们学习的匹配算法都是按照模式串从左向右匹配的，而 BM 算法的匹配顺序是**从右向左**倒着匹配的。
 
-![img](./images/BM算法/3.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/3.jpg)
 
 从前向后匹配
 
-![img](./images/BM算法/4.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/4.jpg)
 
 从后向前匹配
 
@@ -34,26 +34,26 @@ BM 算法包含两部分：**坏字符规则 和 好后缀规则**。下面我�
 
 我们从模式串的末尾向前匹配，当我们发现某个字符串没法匹配的时候。我们把这个无法匹配的字符叫做**坏字符（主串中的字符）**。
 
-![img](./images/BM算法/5.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/5.jpg)
 
 ##### 1.1模式串中不含坏字符
 
 如果模式串中不包含坏字符，也就是 c，那就说明这个字符不可能匹配。这个时候，我们可以直接将模式串滑动到 c 后面的位置，开启新的匹配。
 
-![img](./images/BM算法/6.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/6.jpg)
 
 ##### 1.2模式串中包含坏字符
 
 如果模式串中包含坏字符，我们可以直接将模式串向后移动到与坏字符对齐的位置，开启新的匹配。
 
-![img](./images/BM算法/7.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/7.jpg)
 
 ##### 滑动位数的计算
 
 那么，应该滑动多少个字符呢？我们把坏字符对应的模式串的字符下标记作 si ，如果坏字符在模式串中存在，将坏字符在模式串中的下标记作 xi ，如果不存在，就把 xi 记作 -1 。
 **模式串滑动的位数就等于 si - xi。**（这里说的下标，都是字符在模式串中的下标）：
 
-![img](./images/BM算法/8.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/8.jpg)
 
 **注意**：如果坏字符在模式串中多处出现，xi 取最大的那个，这样不会让模式串滑动过多，导致略过可能匹配的情况。
 
@@ -61,7 +61,7 @@ BM 算法包含两部分：**坏字符规则 和 好后缀规则**。下面我�
 
 好后缀规则和坏字符规则有共同之处，看一下下面的图，你就明白什么是好后缀：
 
-![img](./images/BM算法/9.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/9.jpg)
 
 这个时候，你可以利用坏字符规则来计算滑动的位数，也可以利用好后缀处理。当然，如何选择在后面会讲到，抛开这个问题，我们先看看好后缀规则是怎么工作的。
 
@@ -69,30 +69,30 @@ BM 算法包含两部分：**坏字符规则 和 好后缀规则**。下面我�
 
 在上面的图中，bc 是已经匹配成功的字符串，叫做好后缀，我们将其记作 {u}。如果在模式串中找到了与 {u} 匹配的子串 {u*}，我们将模式串滑动到子串{u*} 与 主串中 {u}对齐的位置：
 
-![img](./images/BM算法/10.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/10.jpg)
 
 ##### 2.2模式串中只包含一个好后缀
 
 如果模式串只有一个为 {u} 的子串，我们就可以直接将模式串滑动到主串中 {u} 的后面：
 
-![img](./images/BM算法/11.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/11.jpg)
 
 ##### 2.3模式串中的后缀子串和前缀子串重合
 
 注意，在 2.2 的滑动在某些情况下是正确的，但是在某些情况下会**过度滑动**：
 
-![img](./images/BM算法/12.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/12.jpg)
 
 你会发现，如果我们使用 2.2 的滑动方式，可能会错过匹配成功的情况。下面我们需要分析这种情况下应该如何滑动，注意，下面的描述会很难懂，你要多看几遍：
 
 
 如果主串中的{u}与模式串有重合，使用2.1的方法（对应下图中上面的情况）。当模式串滑动到**前缀与主串中{u}的后缀有部分重合**的时候，就有可能产生完全匹配（对应下图中下面的情况，匹配成功的例子你可以参考上面的那个图）：
 
-![img](./images/BM算法/13.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/13.jpg)
 
 所以，针对这种情况，我们不仅需要看模式串是否有多个好后缀（2.1），还要看好后缀的后缀子串是否和模式串的前缀子串存在匹配，你可以通过下面的图加深理解：
 
-![img](./images/BM算法/14.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/14.jpg)
 
 以上就是坏字符和好后缀的基本原理，现在我们考虑之前的那个问题：当模式串和主串某个字符不匹配的时候，如何确定是使用好后缀规则还是坏字符规则？
 **我们可以分别计算好后缀和坏字符往后滑动的位数，然后取大的那个作为滑动的位数。**
@@ -106,7 +106,7 @@ BM 算法包含两部分：**坏字符规则 和 好后缀规则**。下面我�
 
 创建一个大小为 256 的数组，默认每个数组值为 -1，利用字符的 ascii 码记录模式串中每个字符出现的位置。（如果出现重复字符，记录的是后面的那个字符的位置）
 
-![img](./images/BM算法/15.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/15.jpg)
 
 
 将上面的过程翻译成代码，其中 b 是模式串 ，m 是模式串的长度，bc 表示刚刚讲的散列表：
@@ -150,7 +150,7 @@ public int bm(char[] a, int n, char[] b, int m) {
 
 针对上面的代码，我们可以使用下面的图加深理解：
 
-![img](./images/BM算法/16.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/16.jpg)
 
 至此，我们完成了坏字符的代码编写，下面编写好后缀的代码。
 
@@ -167,12 +167,12 @@ public int bm(char[] a, int n, char[] b, int m) {
 
 首先，我们要表示模式串中不同的后缀子串，由于模式串中最后一个字符的位置是固定的 m-1 ，所以我们只需要记录长度就可以了。通过长度，我们可以确定一个唯一的**后缀子串**:
 
-![img](./images/BM算法/17.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/17.jpg)
 
 模式串中包含多个好后缀，现在除了后缀子串，我们需要标记和后缀子串相同的各个子串的位置（后缀子串和模式串中的某个子串是重复的，之前我们通过长度已经表示出了各个后缀子串，现在我们就需要用某种方法表示字符串中的那个重复子串（非后缀子串））。
 这里我们引入一个 **suffix** 数组，数组值默认为 -1。数组的下标对应后缀子串的长度（表示了后缀子串），数组存储的值是在模式串中与之相匹配的子串。我知道你已经晕了，你可以看一下下面的图：
 
-![img](./images/BM算法/18.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/18.jpg)
 
 如果模式串中有多个子串与后缀子串相同，那要选则后面的位置。
 
@@ -184,7 +184,7 @@ public int bm(char[] a, int n, char[] b, int m) {
 
 我们需要一个布尔类型的数组 prefix，用来记录模式串的后缀子串能否匹配模式串的前缀子串：
 
-![img](./images/BM算法/19.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/19.jpg)
 
 ##### 2.3填充 suffix 和 prefix 的值
 
@@ -193,7 +193,7 @@ public int bm(char[] a, int n, char[] b, int m) {
 
 如果这个重复子串也是模式串的前缀子串（j = 0），我们就记录 prefix[x] = true：
 
-![img](./images/BM算法/20.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/20.jpg)
 
 两个数组的计算代码如下：
 
@@ -226,17 +226,17 @@ private void generateGS(char[] b, int m, int[] suffix, boolean[] prefix) {
 
   假设好后缀的长度是 k 。我们在 suffix 中查找与其匹配的子串，如果 suffix[k] 不为 -1 ，则移动位数为 j - suffix[k] + 1，其中 j 是坏字符在模式串中的下标：
 
-  ![img](./images/BM算法/21.jpg)
+  ![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/21.jpg)
 
 - 后缀子串和前缀子串重合的情况：
 
   好后缀的后缀子串 b[ r , m - 1]，的长度为 k = m - r，如果prefix[k] == true ，表示长度为 k 的后缀子串 有 可以匹配的前缀子串，这样我们可以把模式串后移 r 位。
 
-  ![img](./images/BM算法/22.jpg)
+  ![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/22.jpg)
 
 - 前两条规则的子串都不存在：我们直接向模式串后移 m 位：
 
-  ![img](./images/BM算法/23.jpg)
+  ![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/字符串匹配/images/BM算法/23.jpg)
 
 ### 代码
 

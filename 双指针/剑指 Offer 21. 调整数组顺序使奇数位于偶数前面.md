@@ -25,7 +25,7 @@
 * 交换 nums[left] 和 nums[right] .
 * 重复上述操作，直到 left == right .
 
-![img](./images/调整数组顺序使奇数位于偶数前面/1.gif)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/双指针/images/调整数组顺序使奇数位于偶数前面/1.gif)
 
 #### 快慢双指针
 
@@ -34,7 +34,7 @@
 - fast向前移动，当它搜索到奇数时，将它和 nums[low] 交换，此时 low 向前移动一个位置 
 - 重复上述操作，直到 fast 指向数组末尾 .
 
-![img](./images/调整数组顺序使奇数位于偶数前面/2.gif)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/双指针/images/调整数组顺序使奇数位于偶数前面/2.gif)
 
 ```java
 class Solution {

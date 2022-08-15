@@ -21,15 +21,15 @@ Floyd 的算法被划分成两个不同的 *阶段* 。在第一阶段，找出�
 下面的图将更好的帮助理解和证明这个方法的正确性。
 
 <video id="video" controls="" preload="none">
-    <source id="mp4" src="./images/环形链表II/环形链表II.mp4" type="video/mp4">
+    <source id="mp4" src="http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/环形链表II/环形链表II.mp4" type="video/mp4">
 </video>
 
 
-![环形链表II](./images/环形链表II/环形链表II1.jpg)
+![环形链表II](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/环形链表II/环形链表II1.jpg)
 
 我们利用已知的条件：慢指针移动 1 步，快指针移动 2 步，来说明它们相遇在环的入口处。（下面证明中的 tortoise 表示慢指针，hare 表示快指针）
 
-![环形链表II](./images/环形链表II/环形链表II2.jpg)
+![环形链表II](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/环形链表II/环形链表II2.jpg)
 
 因为 F=b，指针从 h 点出发和从链表的头出发，最后会遍历相同数目的节点后在环的入口处相遇。
 
