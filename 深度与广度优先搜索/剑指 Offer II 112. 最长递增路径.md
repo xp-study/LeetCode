@@ -6,7 +6,7 @@
 
 **示例 1：**
 
-![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/深度与广度优先搜索/images/最长递增路径/1.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/深度与广度优先搜索/images/最长递增路径/1.jpg)
 
 ```shell
 输入：matrix = [[9,9,4],[6,6,8],[2,1,1]]
@@ -16,7 +16,7 @@
 
 **示例 2：**
 
-![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/深度与广度优先搜索/images/最长递增路径/2.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/深度与广度优先搜索/images/最长递增路径/2.jpg)
 
 ```shell
 输入：matrix = [[3,4,5],[3,2,6],[2,2,1]]

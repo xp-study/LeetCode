@@ -4,7 +4,7 @@
 
 **示例 1：**
 
-![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/链表排序/1.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/链表/images/链表排序/1.jpg)
 
 ```shell
 输入：head = [4,2,1,3]
@@ -13,7 +13,7 @@
 
 **示例 2：**
 
-![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/链表排序/2.jpg)
+![img](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/链表/images/链表排序/2.jpg)
 
 ```shell
 输入：head = [-1,5,3,4,0]
@@ -59,7 +59,7 @@
 
 方法一:
 
-![image-20210812083838088](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/链表排序/3.jpg)
+![image-20210812083838088](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/链表/images/链表排序/3.jpg)
 
 ```java
     ListNode slow = head;
@@ -75,7 +75,7 @@
 
 方法二:
 
-![image-20210812083947481](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/链表排序/4.jpg)
+![image-20210812083947481](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/链表/images/链表排序/4.jpg)
 
 ```java
  	ListNode slow = head; 
@@ -148,7 +148,7 @@ dummy->1->2->NULL
 
 **(d) 迭代法归并过程：**
 
-![image-20210812085018899](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/数据结构/基础数据结构/链表/images/链表排序/5.jpg)
+![image-20210812085018899](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/链表/images/链表排序/5.jpg)
 
 **代码**
 

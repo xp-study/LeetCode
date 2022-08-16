@@ -44,7 +44,7 @@
 * 第五步partition的时间复杂度：O(n)；
 * 第六步在未命中目标数的情况下，考虑最坏的情况：即左侧最多有多少个元素。反过来考虑，右侧最少有多少个元素。
 
-![image-20210627180857515](http://gitlab.wsh-study.com/xp-study/LeeteCode/-/blob/master/TopK问题/images/BFPRT算法/1.jpg)
+![image-20210627180857515](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/TopK问题/images/BFPRT算法/1.jpg)
 
 代码实现如下所示：
 
