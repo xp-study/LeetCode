@@ -21,7 +21,7 @@
 
 ##### 动态规划解析：
 
-![image-20210827082415085](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/动态规划/images/连续子数组的最大和/1.jpg)
+![image-20210827082415085](./images/连续子数组的最大和/1.jpg)
 
 ![Picture1.png](https://pic.leetcode-cn.com/8fec91e89a69d8695be2974de14b74905fcd60393921492bbe0338b0a628fd9a-Picture1.png)
 

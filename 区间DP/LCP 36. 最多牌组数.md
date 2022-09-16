@@ -36,7 +36,7 @@
 
 首先，将 `tiles` 变为 `map<int, int>`。其中，**键**是**点数**, 而**值**是对应的**牌数**，Java中的Treep会自动将key按照从小到大的顺序排序
 
-![map化.gif](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/1.gif)
+![map化.gif](./images/最多牌组数/1.gif)
 
 ```java
         TreeMap<Integer, Integer> countMap = new TreeMap<>();
@@ -57,7 +57,7 @@
 dp += 新增得分
 ```
 
-![幻灯片3.JPG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/2.jpg)
+![幻灯片3.JPG](./images/最多牌组数/2.jpg)
 
 新增加的得分有两部分：
 
@@ -70,13 +70,13 @@ dp += 新增得分
 
 之前组成了两副顺子，留下来 1 张 [2] 和 0 张 [3]，无法和 [4] 一起组成新的顺子。因此，新增加的 [4] 只带来了 1 分新得分：[4] 的刻子得分。
 
-![幻灯片4.JPG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/3.jpg)
+![幻灯片4.JPG](./images/最多牌组数/3.jpg)
 
 **情况2**
 
 之前组成了一副顺子和一副刻子，留下来 2 张 [2] 和 1 张 [3]，能够 [4] 一起组成新的顺子。另外，剩下的 [4] 也能组成一副刻子 。因此，新增加的 [4] 最多能带来 2 分：一分顺子， 一分刻子。
 
-![幻灯片5.JPG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/4.jpg)
+![幻灯片5.JPG](./images/最多牌组数/4.jpg)
 
 仔细分析这两种情况：我们发现：
 
@@ -88,13 +88,13 @@ dp += 新增得分
 
 如果我们把预留数量的所有可能性都列出来，`dp`的大小将有O(n^2)。因此，我们考虑**限制预留的牌数**。预留的牌仅用于跟下两张牌组成顺子，故应考虑**限制顺子的数量**。如下图所示，当相同顺子的数量大于等于3时，我们可以把**每3副顺子换成3副对应的刻子。**
 
-![幻灯片19.JPG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/5.jpg)
+![幻灯片19.JPG](./images/最多牌组数/5.jpg)
 
 那么，相同顺子的数量`<=2`副。
 
 如下图所示，为`[5]`预留的牌，在未来遍历到`[6]`时，可组成顺子`([4], [5], [6])`；在未来遍历到`[7]`时，可组成顺子`([5], [6], [7])`。
 
-![幻灯片20.JPG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/6.jpg)
+![幻灯片20.JPG](./images/最多牌组数/6.jpg)
 
 每种顺子不超过2副。因此，我们预留的牌，也不超过4张。
 
@@ -129,7 +129,7 @@ for (int shunzi = 0; shunzi <= min(cnt_2, min(cnt_1, cnt)); ++shunzi) {
 
 例如，在下面这张图中，下一个点数[new_tile]是5，new_1是预留的[4]的数量，new_2就是剩下的[3]的数量。原来我们有 3 张[3]，顺子用掉 2 张，就还剩 1 张。
 
-![麻将.jpg](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/区间DP/images/最多牌组数/7.jpg)
+![麻将.jpg](./images/最多牌组数/7.jpg)
 
 #### 罗列预留牌数的所有可能性
 

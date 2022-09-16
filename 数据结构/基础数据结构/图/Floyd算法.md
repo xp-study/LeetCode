@@ -1,22 +1,22 @@
 # 多源最短路径问题
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/1.jpg)
+![多源最短路径问题](./images/Floyd算法/1.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/2.jpg)
+![多源最短路径问题](./images/Floyd算法/2.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/3.jpg)
+![多源最短路径问题](./images/Floyd算法/3.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/4.jpg)
+![多源最短路径问题](./images/Floyd算法/4.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/5.jpg)
+![多源最短路径问题](./images/Floyd算法/5.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/6.jpg)
+![多源最短路径问题](./images/Floyd算法/6.jpg)
 
 小灰的思路如下：
 
 第一步，利用迪杰斯特拉算法的距离表，求出从顶点A出发，到其他各个顶点的最短距离：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/7.jpg)
+![多源最短路径问题](./images/Floyd算法/7.jpg)
 
 第二步，继续使用迪杰斯特拉算法，求出从顶点B出发，到其他各个顶点的最短距离。
 
@@ -32,55 +32,55 @@
 
 假如图中有n个顶点，如果不考虑堆优化，一次迪杰斯特拉算法的时间复杂度是O（n^2）。所以，把每一个顶点都计算一遍，总的时间复杂度是O（n^3）。
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/8.jpg)
+![多源最短路径问题](./images/Floyd算法/8.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/9.jpg)
+![多源最短路径问题](./images/Floyd算法/9.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/10.jpg)
+![多源最短路径问题](./images/Floyd算法/10.jpg)
 
 ————————————
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/11.jpg)
+![多源最短路径问题](./images/Floyd算法/11.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/12.jpg)
+![多源最短路径问题](./images/Floyd算法/12.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/13.jpg)
+![多源最短路径问题](./images/Floyd算法/13.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/14.jpg)
+![多源最短路径问题](./images/Floyd算法/14.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/15.jpg)
+![多源最短路径问题](./images/Floyd算法/15.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/16.jpg)
+![多源最短路径问题](./images/Floyd算法/16.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/17.jpg)
+![多源最短路径问题](./images/Floyd算法/17.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/18.jpg)
+![多源最短路径问题](./images/Floyd算法/18.jpg)
 
 举一个栗子：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/19.jpg)
+![多源最短路径问题](./images/Floyd算法/19.jpg)
 
 上图的顶点A和顶点C没有直接相连的边，它们之间的直接距离是无穷大。
 
 如果以B作为“中继顶点”，此时A到C的最短路径就是A-B-C，最短距离是3+2=5。
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/20.jpg)
+![多源最短路径问题](./images/Floyd算法/20.jpg)
 
 再举一个栗子：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/21.jpg)
+![多源最短路径问题](./images/Floyd算法/21.jpg)
 
 上图的顶点A和顶点C直接相连，距离是6。但是存在一条“迂回”路径A-B-C，距离是3+2=5<6。
 
 所以，经过中继顶点B，从A到C的最短距离可以是5。
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/22.jpg)
+![多源最短路径问题](./images/Floyd算法/22.jpg)
 
 下面我们来看一看Floyd算法的详细步骤。
 
 1.要实现Floyd算法，首先需要构建带权图的邻接矩阵：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/23.jpg)
+![多源最短路径问题](./images/Floyd算法/23.jpg)
 
 在邻接矩阵当中，每一个数字代表着从某个顶点到另一个顶点的直接距离，这个距离是没有涉及到任何中继顶点的。
 
@@ -90,7 +90,7 @@ B和C之间的距离原本是无穷大，此时以A为中继，距离缩短为AB
 
 更新对应矩阵元素（橙色区域代表顶点A到其他顶点的临时距离）：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/24.jpg)
+![多源最短路径问题](./images/Floyd算法/24.jpg)
 
 3.接下来以顶点B作为中继顶点，那么各顶点之间的距离会变成什么样子呢？
 
@@ -100,7 +100,7 @@ A和E之间的距离原本是无穷大，此时以B为中继，距离缩短为AB
 
 更新对应矩阵元素（橙色区域代表顶点B到其他顶点的临时距离）：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/25.jpg)
+![多源最短路径问题](./images/Floyd算法/25.jpg)
 
 4.接下来以顶点C作为中继顶点，那么各顶点之间的距离会变成什么样子呢？
 
@@ -108,7 +108,7 @@ A和F之间的距离原本是无穷大，此时以C为中继，距离缩短为AC
 
 更新对应矩阵元素（橙色区域代表顶点C到其他顶点的临时距离）：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/26.jpg)
+![多源最短路径问题](./images/Floyd算法/26.jpg)
 
 .........
 
@@ -120,13 +120,13 @@ A和F之间的距离原本是无穷大，此时以C为中继，距离缩短为AC
 
 最终，当所有顶点都可以作为中继顶点时，我们的距离矩阵更新如下：
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/27.jpg)
+![多源最短路径问题](./images/Floyd算法/27.jpg)
 
 此时，矩阵中每一个元素，都对应着某顶点到另一个顶点的最短距离。
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/28.jpg)
+![多源最短路径问题](./images/Floyd算法/28.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/29.jpg)
+![多源最短路径问题](./images/Floyd算法/29.jpg)
 
 为什么这么说呢？让我们回顾一下动态规划的两大要素：
 
@@ -141,7 +141,7 @@ A和F之间的距离原本是无穷大，此时以C为中继，距离缩短为AC
 
 **顶点i 到 顶点j 的新距离 = Min（顶点i 到 顶点j 的旧距离，顶点i 到 顶点n 的距离+顶点n 到 顶点j 的距离）**
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/30.jpg)
+![多源最短路径问题](./images/Floyd算法/30.jpg)
 
 ```java
 finalstaticint INF =Integer.MAX_VALUE;
@@ -181,6 +181,6 @@ public static void main(String[] args){
 }
 ```
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/31.jpg)
+![多源最短路径问题](./images/Floyd算法/31.jpg)
 
-![多源最短路径问题](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Floyd算法/32.jpg)
+![多源最短路径问题](./images/Floyd算法/32.jpg)

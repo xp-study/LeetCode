@@ -61,7 +61,7 @@
 
 也就是对应到 Java 中的 `TreeSet` 数据结构（基于红黑树，查找和插入都具有折半的效率）。
 
-![IMG_1693.PNG](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/十大排序算法/桶排序/images/值和下标之差都在给定的范围内/1.jpg)
+![IMG_1693.PNG](./images/值和下标之差都在给定的范围内/1.jpg)
 
 * 时间复杂度：TreeSet 基于红黑树，查找和插入都是O(logk) 复杂度。整体复杂度为O(nlogk)
 * 空间复杂度：O(k)

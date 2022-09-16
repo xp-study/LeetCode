@@ -20,7 +20,7 @@
 
 下图中顶点C为割点，但和C相连的边都不是桥。
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/1.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/1.jpg)
 
 #### 2. 暴力解决办法解决求解割点集和割边集
 
@@ -36,11 +36,11 @@
 
 显然如果顶点U的所有孩子顶点可以不通过父顶点U而访问到U的祖先顶点，那么说明此时去掉顶点U不影响图的连通性，U就不是割点。相反，如果顶点U至少存在一个孩子顶点，必须通过父顶点U才能访问到U的祖先顶点，那么去掉顶点U后，顶点U的祖先顶点和孩子顶点就不连通了，说明U是一个割点。
 
-![1](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/2.jpg)
+![1](./images/Tarjan算法_求解图的割点与桥/2.jpg)
 
 上图中的箭头表示DFS访问的顺序（而不表示有向图），对于顶点D而言，D的孩子顶点可以通过连通区域1红色的边回到D的祖先顶点C（此时C已被访问过），所以此时D不是割点。
 
-![2](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/3.jpg)
+![2](./images/Tarjan算法_求解图的割点与桥/3.jpg)
 
 上图中的连通区域2中的顶点，必须通过D才能访问到D的祖先顶点，所以说此时D为割点。再次强调一遍，箭头仅仅表示DFS的访问顺序，而不是表示该图是有向图。
 
@@ -82,13 +82,13 @@ parent[]:下标表示顶点的编号，数组中的值表示该顶点的父顶�
 
 1）
 
-![3](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/4.jpg)
+![3](./images/Tarjan算法_求解图的割点与桥/4.jpg)
 
 当DFS走到顶点H时，有三个分支，**我们假设我们先走H-I，然后走H-F，最后走H-J**。从H访问I时，顶点I未被访问过，所以I的dfn和low都为9。根据DFS的遍历顺序，我们应该从顶点I继续访问。
 
 2）
 
-![4](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/5.jpg)
+![4](./images/Tarjan算法_求解图的割点与桥/5.jpg)
 
 上图表示由顶点I访问顶点D，而此时发现D已被访问，当从D回溯到I时，由于
 
@@ -98,55 +98,55 @@ dfn[D] < dfn[I]
 
 3）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/6.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/6.jpg)
 
 根据DFS的原理，我们从顶点I回到顶点H，显然到目前为止顶点H能访问到的最小时间戳也是4（因为我们到现在为止只知道能从H可以通过I访问到D），所以low[H] = 4
 
 4）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/7.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/7.jpg)
 
 现在我们继续执行DFS，走H-F路径，发现顶点F已被访问且dfn[F] < dfn[H]，说明F是H的祖先顶点，但此时顶点H能访问的最早时间戳是4，而F的时间戳是6，依据low值定义low[H]仍然为4。
 
 5）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/8.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/8.jpg)
 
 最后我们走H-J路径，顶点J未被访问过所以 dfn[J] = 10  low[J] = 10
 
 6）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/9.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/9.jpg)
 
 同理，由DFS访问顶点B，dfn[J] > dfn[B]，B为祖先顶点，顶点J不经过父顶点H能访问到的最早时间戳就是dfn[B]，即low[J] = 2
 
 7）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/10.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/10.jpg)
 
 我们从顶点J回溯到顶点H，显然到目前为止顶点H能访问到的最早时间戳就更新为2（因为我们到现在为止知道了能从H访问到J），所以low[H] = 2
 
 8）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/11.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/11.jpg)
 
 根据DFS原理，我们从H回退到顶点E（H回退到G,G回退到F，F回退到E的过程省略），所经过的顶点都会更新low值，因为这些顶点不用通过自己的父顶点就可以和顶点B相连。当回溯到顶点E时，还有未访问过的顶点，那么继续进行E-K分支的DFS。
 
 9）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/12.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/12.jpg)
 
 从E-K分支访问到顶点L时，顶点k和L的的dfn值和low值如图上图所示
 
 10）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/13.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/13.jpg)
 
 接着我们继续回溯到了顶点D（中间过程有所省略），并更新low[D]
 
 11）
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/14.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/14.jpg)
 
 最后，按照DFS的原理，我们回退到顶点A，并且求出来了每个顶点的dfn值和low值。
 
@@ -158,7 +158,7 @@ dfn[D] < dfn[I]
 
 需要说明的是，Tarjan算法从图的任意顶点进行DFS都可以得出割点集和割边集。
 
-![image](http://gitlab.wsh-study.com/xp-study/LeeteCode/blob/master/数据结构/基础数据结构/图/images/Tarjan算法_求解图的割点与桥/15.jpg)
+![image](./images/Tarjan算法_求解图的割点与桥/15.jpg)
 
 从上图的结果中我们可以看出，顶点B,顶点E和顶点K为割点，A-B以及E-K和K-L为割边。
 
