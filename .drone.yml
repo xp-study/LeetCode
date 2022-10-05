@@ -15,5 +15,5 @@ steps:
       password: XU173168penga
       port: 8022
       command_timeout: 2m
-      target: /opt/xp-study/
-      source: ../LeetCode/
+      target: /opt/xp-study/LeetCode/
+      source: /drone/src/
