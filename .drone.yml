@@ -6,6 +6,7 @@ steps:
     image: appleboy/drone-scp
     commands:
       - ls -al
+      - pwd
   - name: 文档拷贝
     image: appleboy/drone-scp
     settings:
