@@ -16,4 +16,4 @@ steps:
       port: 8022
       command_timeout: 2m
       target: /opt/xp-study/LeetCode/
-      source: /drone/src/
+      source: ./*
