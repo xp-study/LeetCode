@@ -1,0 +1,14 @@
+kind: pipeline # 定义对象类型，还有secret和signature两种类型
+type: docker # 定义流水线类型，还有kubernetes、exec、ssh等类型
+name: 文档同步 # 定义流水线名称
+steps:
+  - name: 文档拷贝
+    image: appleboy/drone-scp
+    settings:
+      host: gitlab.wsh-study.com
+      username: root
+      password: XU173168penga
+      port: 8022
+      command_timeout: 2m
+      target: /opt/xp-study/
+      source: ../LeetCode/
