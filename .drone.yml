@@ -5,7 +5,7 @@ steps:
   - name: 文档拷贝
     image: appleboy/drone-scp
     settings:
-      host: gitlab.wsh-study.com
+      host: 172.17.0.1 
       username: root
       password: XU173168penga
       port: 8022

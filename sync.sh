@@ -13,6 +13,9 @@ rm backup/sync.sh
 # 同步文件到github仓库
 cp ./backup/* ./LeeteCode/
 
+# 进入git仓库
+cd ./LeeteCode/
+
 # 添加提交
 git add .
 
