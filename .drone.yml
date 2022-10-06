@@ -24,4 +24,5 @@ steps:
         - cp /opt/xp-study/backup/sync.sh /opt/xp-study/
         - chmod 777 /opt/xp-study/sync.sh
         - /opt/xp-study/sync.sh
+        - rm /opt/xp-study/sync.sh
         - echo ======完成同步=======
