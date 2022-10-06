@@ -4,7 +4,7 @@
 cd /opt/xp-study/
 
 # 删除被拷贝工程的git文件
-rm backup/.git
+rm -rf backup/.git
 
 rm backup/.drone.yml
 
