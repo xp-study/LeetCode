@@ -2,11 +2,6 @@ kind: pipeline # 定义对象类型，还有secret和signature两种类型
 type: docker # 定义流水线类型，还有kubernetes、exec、ssh等类型
 name: 文档同步 # 定义流水线名称
 steps:
-  - name: 打包(通通云眼V5)
-    image: appleboy/drone-scp
-    commands:
-      - ls -al
-      - pwd
   - name: 文档拷贝
     image: appleboy/drone-scp
     settings:
@@ -15,5 +10,18 @@ steps:
       password: XU173168penga
       port: 8022
       command_timeout: 2m
-      target: /opt/xp-study/LeetCode/
+      target: /opt/xp-study/backup/
       source: ./*
+  - name: 开始同步
+    image: appleboy/drone-ssh
+    settings:
+      host: gitlab.wsh-study.com
+      username: root
+      password: XU173168penga
+      port: 8022
+      script:
+        - echo ======开始同步=======
+        - cp /opt/xp-study/backup/sync.sh /opt/xp-study/
+        - chmod 777 /opt/xp-study/sync.sh
+        - /opt/xp-study/sync.sh
+        - echo ======完成同步=======
