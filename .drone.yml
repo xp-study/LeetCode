@@ -26,3 +26,4 @@ steps:
         - /opt/xp-study/sync.sh
         - rm /opt/xp-study/sync.sh
         - echo ======完成同步=======
+      
