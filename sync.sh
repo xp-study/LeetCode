@@ -13,7 +13,7 @@ rm backup/sync.sh
 # 删除LeeteCode下面除git外的所有文件
 cd ./LeeteCode/
 
-rm  -rf  !(.git)
+ ls -al | grep -v .git | xargs rm -rf
 
 # 重新回到工作目录
 cd /opt/xp-study/
