@@ -512,3 +512,69 @@
     }
 
 ```
+
+// 节点实现 动态开点 单点更新 增量式更新 懒更新 求区间和(解决逆序对问题)
+
+```java
+
+ class SegmentTree {
+        long left;
+        long right;
+        SegmentTree leftChild;
+        SegmentTree rightChild;
+        int val;
+
+        public SegmentTree(long left, long right) {
+            this.left = left;
+            this.right = right;
+        }
+
+        public void buildDown(SegmentTree root) {
+
+            long mid = root.left + (root.right - root.left) / 2;
+
+            if (root.leftChild == null) {
+                root.leftChild = new SegmentTree(root.left, mid);
+            }
+
+            if (root.rightChild == null) {
+                root.rightChild = new SegmentTree(mid + 1, root.right);
+            }
+        }
+
+        public int query(SegmentTree root, long start, long end) {
+            if (start == root.left && end == root.right) {
+                return root.val;
+            }
+
+            buildDown(root);
+            long mid = root.left + (root.right - root.left) / 2;
+            if (end <= mid) {
+                return query(root.leftChild, start, end);
+            } else if (start >= mid + 1) {
+                return query(root.rightChild, start, end);
+            } else {
+                return query(root.leftChild, start, mid) + query(root.rightChild, mid + 1, end);
+            }
+        }
+
+        public void update(SegmentTree root, long index, int val) {
+            if (index == root.left && index == root.right) {
+                root.val += val;
+                root.leftChild = null;
+                root.rightChild = null;
+                return;
+            }
+
+            buildDown(root);
+            long mid = root.left + (root.right - root.left) / 2;
+            if (index <= mid) {
+                update(root.leftChild, index, val);
+            } else if (index >= mid + 1) {
+                update(root.rightChild, index, val);
+            }
+            root.val = root.leftChild.val + root.rightChild.val;
+        }
+    }
+
+```
