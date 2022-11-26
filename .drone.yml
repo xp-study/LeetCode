@@ -5,5 +5,4 @@ steps:
   - name: 力扣备份
     image: harbor.wsh-study.com/public/ubuntu:20.0.4
     commands:
-      - pwd
       - ls    
