@@ -7,3 +7,6 @@ steps:
     commands:
       - pwd
       - ls    
+
+image_pull_secrets:
+- dockerconfigjson
