@@ -8,4 +8,5 @@ steps:
       username: admin
       password: admin123    
     commands:
-      - ls    
+      - ls   
+      - pwd  
