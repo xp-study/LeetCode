@@ -6,6 +6,7 @@ steps:
     image: harbor.wsh-study.com/public/ubuntu:20.04
     commands:
       - ls   
+      - pwd  
 
 image_pull_secrets:
   - dockerconfigjson
