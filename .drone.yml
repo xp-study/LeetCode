@@ -6,9 +6,9 @@ steps:
     image: harbor.wsh-study.com/public/ubuntu:20.0.4
     settings: 
       username:
-          from_secret: admin         #harbor登陆账号
+          from_secret: docker_username         #harbor登陆账号
       password:
-          from_secret: admin         #harbor登陆密码    
+          from_secret: docker_password         #harbor登陆密码   
     commands:
       - ls   
       - pwd  
