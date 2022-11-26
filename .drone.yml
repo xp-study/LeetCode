@@ -3,12 +3,10 @@ type: docker # 定义流水线类型，还有kubernetes、exec、ssh等类型
 name: 力扣备份 # 定义流水线名称
 steps:
   - name: 力扣备份
-    image: harbor.wsh-study.com/public/ubuntu:20.0.4
-    settings: 
-      username:
-          from_secret: docker_username         #harbor登陆账号
-      password:
-          from_secret: docker_password         #harbor登陆密码   
+    image: harbor.wsh-study.com/public/ubuntu:20.0.4 
     commands:
       - ls   
       - pwd  
+
+image_pull_secrets:
+  - dockerconfigjson
