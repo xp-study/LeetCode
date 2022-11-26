@@ -7,7 +7,8 @@ steps:
     commands:
       - ls   
       - pwd  
-      - cp /drone/src/!(.git) /root/xp-study/LeeteCode/
+      - rm -rf /drone/src/.git
+      - cp /drone/src/ /root/xp-study/LeeteCode/
       - cd /root/xp-study/LeeteCode/
       - git add .
       - git commit -m  ${DRONE_COMMIT}
