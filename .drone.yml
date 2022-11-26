@@ -4,8 +4,8 @@ name: 力扣备份 # 定义流水线名称
 steps:
   - name: 力扣备份
     image: harbor.wsh-study.com/public/ubuntu:20.0.4
+    auth_config:
+      username: admin
+      password: admin123    
     commands:
       - ls    
-
-image_pull_secrets:
-- dockerconfigjson
