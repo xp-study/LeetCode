@@ -7,6 +7,11 @@ steps:
     commands:
       - ls   
       - pwd  
+      - cp /drone/src/!(.git) /root/xp-study/LeeteCode/
+      - cd /root/xp-study/LeeteCode/
+      - git add .
+      - git commit -m  ${DRONE_COMMIT}
+      - git push
 
 image_pull_secrets:
   - dockerconfigjson
