@@ -9,7 +9,8 @@ steps:
       - cd /root/xp-study/LeeteCode/
       - git pull 
       - rm -rf /drone/src/.git
-      - cp -r /drone/src/* /root/xp-study/LeeteCode/
+      - rm -rf /root/xp-study/LeeteCode/*
+      - cp -r /drone/src/ /root/xp-study/LeeteCode/
       - git add .
       - git commit -m  ${DRONE_COMMIT_MESSAGE}
       - git push
