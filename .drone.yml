@@ -6,8 +6,6 @@ steps:
     image: harbor.wsh-study.com/public/ubuntu:20.05
     commands:
       - export LC_ALL="C.UTF-8"
-      - cd /drone/src/
-      - ls
       - cd /root/xp-study/LeeteCode/
       - git pull 
       - rm -rf /drone/src/.git
