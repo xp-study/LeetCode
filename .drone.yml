@@ -7,9 +7,10 @@ steps:
     commands:
       - ls   
       - export LC_ALL="C.UTF-8"
+      - cd /root/xp-study/LeeteCode/
+      - git pull 
       - rm -rf /drone/src/.git
       - cp -r /drone/src/ /root/xp-study/LeeteCode/
-      - cd /root/xp-study/LeeteCode/
       - git add .
       - git commit -m  ${DRONE_COMMIT}
       - git push
