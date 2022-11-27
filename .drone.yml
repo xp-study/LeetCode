@@ -3,15 +3,15 @@ type: docker # 定义流水线类型，还有kubernetes、exec、ssh等类型
 name: 力扣备份 # 定义流水线名称
 steps:
   - name: 力扣备份
-    image: harbor.wsh-study.com/public/ubuntu:20.05
+    image: harbor.wsh-study.com/public/ubuntu:20.04
     commands:
-      - ls   
       - export LC_ALL="C.UTF-8"
-      - rm -rf /drone/src/.git
-      - cp -r /drone/src/ /root/xp-study/LeeteCode/
       - cd /root/xp-study/LeeteCode/
+      - git pull 
+      - rm -rf /drone/src/.git
+      - cp -r /drone/src/* /root/xp-study/LeeteCode/
       - git add .
-      - git commit -m  ${DRONE_COMMIT}
+      - git commit -m  ${DRONE_COMMIT_MESSAGE}
       - git push
 
 image_pull_secrets:
