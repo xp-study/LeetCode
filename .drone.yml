@@ -6,11 +6,11 @@ steps:
     image: harbor.wsh-study.com/public/ubuntu:20.04
     commands:
       - export LC_ALL="C.UTF-8"
-      - cd /root/xp-study/LeeteCode/
+      - cd /root/xp-study/LeetCode/
       - git pull 
       - rm -rf /drone/src/.git
-      - rm -rf /root/xp-study/LeeteCode/*
-      - cp -r /drone/src/* /root/xp-study/LeeteCode/
+      - rm -rf /root/xp-study/LeetCode/*
+      - cp -r /drone/src/* /root/xp-study/LeetCode/
       - git add .
       - git commit -m  ${DRONE_COMMIT_MESSAGE}
       - git push
